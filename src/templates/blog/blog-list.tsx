@@ -27,10 +27,46 @@ export function BlogList() {
       </header>
 
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-6">
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
+        <PostCard
+          author={{ avatar: "/customer-01.png", name: "Diego" }}
+          date="22/04/1995"
+          description="Se você está buscando uma maneira simples e eficaz de vender seus produtos online, o Site.Set é a solução perfeita para você. Criar uma loja virtual de sucesso nunca foi tão fácil. Com nossa plataforma intuitiva, você pode criar um site profissional para sua loja em minutos, sem precisar de conhecimentos técnicos."
+          image="/assets/primeiro-post.png"
+          title="Transformando seu negócio em uma loja virtual"
+          slug="transformando-seu-negocio-em-uma-loja-virutal"
+        />
+        <PostCard
+          author={{ avatar: "/customer-01.png", name: "Diego" }}
+          date="22/04/1995"
+          description="Se você está buscando uma maneira simples e eficaz de vender seus produtos online, o Site.Set é a solução perfeita para você. Criar uma loja virtual de sucesso nunca foi tão fácil. Com nossa plataforma intuitiva, você pode criar um site profissional para sua loja em minutos, sem precisar de conhecimentos técnicos."
+          image="/assets/primeiro-post.png"
+          title="Transformando seu negócio em uma loja virtual"
+          slug="transformando-seu-negocio-em-uma-loja-virutal"
+        />
+        <PostCard
+          author={{ avatar: "/customer-01.png", name: "Diego" }}
+          date="22/04/1995"
+          description="Se você está buscando uma maneira simples e eficaz de vender seus produtos online, o Site.Set é a solução perfeita para você. Criar uma loja virtual de sucesso nunca foi tão fácil. Com nossa plataforma intuitiva, você pode criar um site profissional para sua loja em minutos, sem precisar de conhecimentos técnicos."
+          image="/assets/primeiro-post.png"
+          title="Transformando seu negócio em uma loja virtual"
+          slug="transformando-seu-negocio-em-uma-loja-virutal"
+        />
+        <PostCard
+          author={{ avatar: "/customer-01.png", name: "Diego" }}
+          date="22/04/1995"
+          description="Se você está buscando uma maneira simples e eficaz de vender seus produtos online, o Site.Set é a solução perfeita para você. Criar uma loja virtual de sucesso nunca foi tão fácil. Com nossa plataforma intuitiva, você pode criar um site profissional para sua loja em minutos, sem precisar de conhecimentos técnicos."
+          image="/assets/primeiro-post.png"
+          title="Transformando seu negócio em uma loja virtual"
+          slug="transformando-seu-negocio-em-uma-loja-virutal"
+        />
+        <PostCard
+          author={{ avatar: "/customer-01.png", name: "Diego" }}
+          date="22/04/1995"
+          description="Se você está buscando uma maneira simples e eficaz de vender seus produtos online, o Site.Set é a solução perfeita para você. Criar uma loja virtual de sucesso nunca foi tão fácil. Com nossa plataforma intuitiva, você pode criar um site profissional para sua loja em minutos, sem precisar de conhecimentos técnicos."
+          image="/assets/primeiro-post.png"
+          title="Transformando seu negócio em uma loja virtual"
+          slug="transformando-seu-negocio-em-uma-loja-virutal"
+        />
       </div>
     </div>
   );
