@@ -1,5 +1,6 @@
 import { Search } from "@/components/search";
 import { useRouter } from "next/router";
+import { PostCard } from "./components/post-card";
 
 export function BlogList() {
   const router = useRouter();
@@ -9,7 +10,7 @@ export function BlogList() {
     : "Dicas e estratégias para impulsionar seu negócio";
 
   return (
-    <div className="flex flex-col py-24 flex-grow h-full">
+    <div className="flex flex-col py-24 flex-grow h-full md:gap-14 gap-6">
       <header>
         <div className="container space-y-6 flex flex-col items-start justify-between md:flex-row md:items-end lg:items-end">
           <div className="flex flex-col gap-4 md:p-0">
@@ -24,6 +25,13 @@ export function BlogList() {
           <Search />
         </div>
       </header>
+
+      <div className="container grid grid-cols-1 md:grid-cols-3 gap-6">
+        <PostCard />
+        <PostCard />
+        <PostCard />
+        <PostCard />
+      </div>
     </div>
   );
 }
