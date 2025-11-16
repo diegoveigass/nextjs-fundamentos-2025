@@ -1,6 +1,7 @@
 import { Search } from "@/components/search";
 import { useRouter } from "next/router";
 import { PostCard } from "./components/post-card";
+import { PostGridCard } from "./components/post-grid-card";
 
 export function BlogList() {
   const router = useRouter();
@@ -26,7 +27,7 @@ export function BlogList() {
         </div>
       </header>
 
-      <div className="container grid grid-cols-1 md:grid-cols-3 gap-6">
+      <PostGridCard>
         <PostCard
           author={{ avatar: "/customer-01.png", name: "Diego" }}
           date="22/04/1995"
@@ -67,7 +68,7 @@ export function BlogList() {
           title="Transformando seu negócio em uma loja virtual"
           slug="transformando-seu-negocio-em-uma-loja-virutal"
         />
-      </div>
+      </PostGridCard>
     </div>
   );
 }
