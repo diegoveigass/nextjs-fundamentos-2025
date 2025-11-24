@@ -1,8 +1,9 @@
 import { Search } from "@/components/search";
+import { allPosts } from "contentlayer/generated";
+import { Inbox } from "lucide-react";
 import { useRouter } from "next/router";
 import { PostCard } from "./components/post-card";
 import { PostGridCard } from "./components/post-grid-card";
-import { allPosts } from "contentlayer/generated";
 
 export function BlogList() {
   const router = useRouter();
@@ -11,7 +12,18 @@ export function BlogList() {
     ? `Resultados de busca para: "${query}"`
     : "Dicas e estratégias para impulsionar seu negócio";
 
-  const posts = allPosts;
+  const posts = query
+    ? allPosts.filter((post) => {
+        return (
+          post.title.toLocaleLowerCase().includes(query.toLocaleLowerCase()) ||
+          post.description
+            .toLocaleLowerCase()
+            .includes(query.toLocaleLowerCase())
+        );
+      })
+    : allPosts;
+
+  const hasPosts = posts.length > 0;
 
   return (
     <div className="flex flex-col py-24 flex-grow h-full md:gap-14 gap-6">
@@ -30,24 +42,31 @@ export function BlogList() {
         </div>
       </header>
 
-      <PostGridCard>
-        {posts.map((post) => {
-          return (
-            <PostCard
-              key={post._id}
-              title={post.title}
-              image={post.image.trimEnd()}
-              description={post.description}
-              slug={post.slug}
-              date={new Date(post.date).toLocaleDateString("pt-BR")}
-              author={{
-                avatar: post.author.avatar.trimEnd(),
-                name: post.author.name,
-              }}
-            />
-          );
-        })}
-      </PostGridCard>
+      {hasPosts ? (
+        <PostGridCard>
+          {posts.map((post) => {
+            return (
+              <PostCard
+                key={post._id}
+                title={post.title}
+                image={post.image.trimEnd()}
+                description={post.description}
+                slug={post.slug}
+                date={new Date(post.date).toLocaleDateString("pt-BR")}
+                author={{
+                  avatar: post.author.avatar.trimEnd(),
+                  name: post.author.name,
+                }}
+              />
+            );
+          })}
+        </PostGridCard>
+      ) : (
+        <div className="flex flex-col items-center justify-center text-gray-100 gap-8 border-dashed border-2 border-gray-300 container p-8 md:p-12 rounded-lg">
+          <Inbox className="size-12 text-cyan-300" />
+          <p>Nenhum post encontrado.</p>
+        </div>
+      )}
     </div>
   );
 }
