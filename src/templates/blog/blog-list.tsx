@@ -54,8 +54,8 @@ export function BlogList() {
                 slug={post.slug}
                 date={new Date(post.date).toLocaleDateString("pt-BR")}
                 author={{
-                  avatar: post.author.avatar.trimEnd(),
-                  name: post.author.name,
+                  avatar: post.Author.avatar.trimEnd(),
+                  name: post.Author.name,
                 }}
               />
             );
