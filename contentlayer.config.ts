@@ -5,7 +5,7 @@ import {
 } from "contentlayer/source-files";
 
 const Author = defineNestedType(() => ({
-  name: "author",
+  name: "Author",
   fields: {
     name: { type: "string", required: true },
     avatar: { type: "string", required: true },
@@ -20,7 +20,7 @@ export const Post = defineDocumentType(() => ({
     date: { type: "date", required: true },
     description: { type: "string", required: true },
     image: { type: "string", required: true },
-    author: {
+    Author: {
       type: "nested",
       required: true,
       of: Author,

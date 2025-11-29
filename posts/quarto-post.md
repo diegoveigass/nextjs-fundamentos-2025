@@ -3,7 +3,7 @@ title: Erros comuns ao criar uma loja virtual
 description: Veja os principais erros que você deve evitar ao montar seu e-commerce
 date: 2024-12-29 18:40:00
 image: /assets/primeiro-post.png
-author:
+Author:
   name: Diego Veiga
   avatar: https://github.com/diegoveigass.png
 ---

@@ -3,7 +3,7 @@ title: Como aumentar as vendas da sua loja virtual
 description: Estratégias práticas para melhorar conversão e faturamento no seu e-commerce
 date: 2024-12-26 09:10:00
 image: /assets/primeiro-post.png
-author:
+Author:
   name: Diego Veiga
   avatar: https://github.com/diegoveigass.png
 ---

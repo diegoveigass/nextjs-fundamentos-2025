@@ -3,7 +3,7 @@ title: Dados e insights sobre lojas virtuais
 description: Estatísticas, curiosidades e informações complementares para quem quer criar sua loja online
 date: 2024-12-22 14:30:00
 image: /assets/primeiro-post.png
-author:
+Author:
   name: Diego Veiga
   avatar: https://github.com/diegoveigass.png
 ---
