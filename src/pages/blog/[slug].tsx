@@ -13,6 +13,8 @@ import Link from "next/link";
 import { Avatar } from "@/components/avatar";
 import { AvatarTitle } from "@/components/avatar/avatar-title";
 import { Markdown } from "@/components/markdown";
+import { Button } from "@/components/ui/button";
+import { Facebook, Link2, Linkedin, Slack } from "lucide-react";
 
 export default function PostPage() {
 	const router = useRouter();
@@ -76,6 +78,28 @@ export default function PostPage() {
 						<Markdown content={post.body.raw} />
 					</div>
 				</article>
+
+				<aside className="space-y-6">
+					<h2 className="mb-4 text-heading-xs">Compartilhar</h2>
+					<div className="rounded-lg bg-gray-700 flex flex-col gap-2 w-full">
+						<Button variant="outline" className="justify-start">
+							<Linkedin />
+							Linkedin
+						</Button>
+						<Button variant="outline" className="justify-start">
+							<Slack />
+							Slack
+						</Button>
+						<Button variant="outline" className="justify-start">
+							<Facebook />
+							Facebook
+						</Button>
+						<Button variant="outline" className="justify-start">
+							<Link2 />
+							Copiar link
+						</Button>
+					</div>
+				</aside>
 			</div>
 		</main>
 	);
