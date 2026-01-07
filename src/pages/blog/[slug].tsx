@@ -61,6 +61,7 @@ export default function PostPage() {
 								src={post.Author.avatar.trimEnd()}
 								alt=""
 								className="rounded-full"
+								size="sm"
 							/>
 							<Avatar.Content>
 								<AvatarTitle>{post.Author.name}</AvatarTitle>
