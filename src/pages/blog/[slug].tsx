@@ -1,5 +1,8 @@
 import { useRouter } from "next/router";
 
+import { Avatar } from "@/components/avatar";
+import { AvatarTitle } from "@/components/avatar/avatar-title";
+import { Markdown } from "@/components/markdown";
 import {
 	Breadcrumb,
 	BreadcrumbItem,
@@ -7,15 +10,11 @@ import {
 	BreadcrumbList,
 	BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Button } from "@/components/ui/button";
+import { useShare } from "@/hooks/use-share/use-share";
 import { allPosts } from "contentlayer/generated";
 import Image from "next/image";
 import Link from "next/link";
-import { Avatar } from "@/components/avatar";
-import { AvatarTitle } from "@/components/avatar/avatar-title";
-import { Markdown } from "@/components/markdown";
-import { Button } from "@/components/ui/button";
-import { Facebook, Link2, Linkedin, Slack } from "lucide-react";
-import { useShare } from "@/hooks";
 
 export default function PostPage() {
 	const router = useRouter();
