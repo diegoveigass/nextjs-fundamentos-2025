@@ -15,6 +15,7 @@ import { AvatarTitle } from "@/components/avatar/avatar-title";
 import { Markdown } from "@/components/markdown";
 import { Button } from "@/components/ui/button";
 import { Facebook, Link2, Linkedin, Slack } from "lucide-react";
+import { useShare } from "@/hooks";
 
 export default function PostPage() {
 	const router = useRouter();
@@ -25,6 +26,15 @@ export default function PostPage() {
 	if (!post) return;
 
 	const publishedAt = new Date(post.date).toLocaleDateString("pt-BR");
+
+	const postUrl = `https://site.set/blog/${slug}`;
+
+	// biome-ignore lint/correctness/useHookAtTopLevel: <explanation>
+	const { shareButtons } = useShare({
+		url: postUrl,
+		title: post.title,
+		text: post.description,
+	});
 
 	return (
 		<main className="mt-32 text-gray-100 container space-y-4">
@@ -81,23 +91,23 @@ export default function PostPage() {
 
 				<aside className="space-y-6">
 					<h2 className="mb-4 text-heading-xs">Compartilhar</h2>
-					<div className="rounded-lg bg-gray-700 flex flex-col gap-2 w-full">
-						<Button variant="outline" className="justify-start">
-							<Linkedin />
-							Linkedin
-						</Button>
-						<Button variant="outline" className="justify-start">
-							<Slack />
-							Slack
-						</Button>
-						<Button variant="outline" className="justify-start">
-							<Facebook />
-							Facebook
-						</Button>
-						<Button variant="outline" className="justify-start">
+					<div className="rounded-lg bg-gray-700 flex flex-col gap-2">
+						{shareButtons.map((provider) => (
+							<Button
+								key={provider.name}
+								variant="outline"
+								className="justify-start w-full"
+								onClick={provider.action}
+							>
+								{provider.icon}
+								{provider.name}
+							</Button>
+						))}
+
+						{/* <Button variant="outline" className="justify-start">
 							<Link2 />
 							Copiar link
-						</Button>
+						</Button> */}
 					</div>
 				</aside>
 			</div>
