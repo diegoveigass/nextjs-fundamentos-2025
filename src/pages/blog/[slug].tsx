@@ -36,7 +36,7 @@ export default function PostPage() {
 	});
 
 	return (
-		<main className="mt-32 text-gray-100 container space-y-4">
+		<main className="py-20 text-gray-100 container space-y-8">
 			<Breadcrumb>
 				<BreadcrumbList>
 					<BreadcrumbItem>
@@ -89,17 +89,17 @@ export default function PostPage() {
 				</article>
 
 				<aside className="space-y-6">
-					<h2 className="mb-4 text-heading-xs">Compartilhar</h2>
-					<div className="rounded-lg bg-gray-700 flex flex-col gap-2">
+					<h2 className="mb-4 text-heading-xs hidden md:block">Compartilhar</h2>
+					<div className="rounded-lg bg-gray-700 flex justify-between md:flex-col gap-2">
 						{shareButtons.map((provider) => (
 							<Button
 								key={provider.name}
 								variant="outline"
-								className="justify-start w-full"
+								className="justify-start w-fit md:w-full"
 								onClick={provider.action}
 							>
 								{provider.icon}
-								{provider.name}
+								<span className="hidden md:block">{provider.name}</span>
 							</Button>
 						))}
 

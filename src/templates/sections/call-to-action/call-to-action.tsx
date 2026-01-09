@@ -7,7 +7,7 @@ export const CallToAction = () => {
 		<section className="py-24 bg-gradient-to-b relative">
 			<div className="absolute inset-0 hidden md:block bg-[url('/background-footer.svg')] bg-cover bg-center bg-no-repeat opacity-90" />
 
-			<div className="absolute bg-cyan-300 size-16 rounded-full flex items-center justify-center -top-8 left-1/2 -translate-y-1/2 -translate-x-1/2">
+			<div className="absolute bg-cyan-300 size-16 rounded-full flex items-center justify-center -top-0 left-1/2 -translate-y-1/2 -translate-x-1/2">
 				<Store className="text-cyan-100 size-8" />
 			</div>
 
